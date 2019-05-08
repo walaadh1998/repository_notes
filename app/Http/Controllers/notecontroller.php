@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class notecontroller extends Controller
 {
     public function index()
     {
         //
-//        $trips = Trip::withTrashed()->get();
-        $note = Note::all();
+$note =  DB::table('note')->orderBy('created_at','desc')->get();
 
         return view('note.index', [
-            'note' => $note
+            'notes' => $note
         ]);
     }
 

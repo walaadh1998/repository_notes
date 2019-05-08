@@ -9,14 +9,16 @@
             <th>#</th>
             <th>Title</th>
             <th>content</th>
+            <th>Submitted At</th>
 
         </tr>
 
         @forelse($notes as $note)
             <tr>
-
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $note->title }}</td>
                 <td>{{ $note->content }}</td>
+                <td>{{ \Carbon\Carbon::parse($note->created_at)->format('Y-m-d D') }}</td>
             </tr>
         @empty
             <tr>

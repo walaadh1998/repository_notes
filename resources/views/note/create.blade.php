@@ -12,11 +12,7 @@
         <br>
         <br>
        content
-        <input type="text" name="content" />
-        <br>
-        <br>
-        Details
-        <textarea name="details">
+        <textarea name="content">
         </textarea>
         <br>
         <br>
